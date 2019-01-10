@@ -1,0 +1,12 @@
+<p>Address: <%= account %></p>
+<ul>
+    <% balances.forEach(function(balance){ %>
+        <li>
+            <% if (balance.asset_type == 'native') { %>
+                Lumen: <%= balance.balance %>
+            <% } else { %>
+                <%= balance.asset %>: <%= balance.balance %>
+            <% } %>
+        </li>
+    <% }); %>
+</ul>

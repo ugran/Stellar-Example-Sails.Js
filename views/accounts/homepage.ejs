@@ -1,0 +1,13 @@
+<div class='container'>
+    <% if (typeof new_keyPair != "undefined") { %>
+        <%- include('newkeypair'); %>
+    <% } else if (typeof account != "undefined" && typeof balances != "undefined") { %>
+        <%- include('showbalance'); %>
+    <% } else if (typeof error != "undefined") { %>
+        <div class="alert alert-primary" role="alert">
+         <%= error %>
+        </div>
+    <% } else { %>
+        <%- include('dashboard') %>
+    <% } %>
+</div>
